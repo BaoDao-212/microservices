@@ -2,15 +2,15 @@ package com.baodao212.identity_service.controller;
 
 import java.util.List;
 
+import jakarta.validation.Valid;
+
+import org.springframework.web.bind.annotation.*;
+
 import com.baodao212.identity_service.dto.request.ApiResponse;
 import com.baodao212.identity_service.dto.request.UserCreationRequest;
 import com.baodao212.identity_service.dto.request.UserUpdateRequest;
 import com.baodao212.identity_service.dto.response.UserResponse;
 import com.baodao212.identity_service.service.UserService;
-import jakarta.validation.Valid;
-
-import org.springframework.web.bind.annotation.*;
-
 
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;

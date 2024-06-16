@@ -3,6 +3,11 @@ package com.baodao212.identity_service.service;
 import java.util.HashSet;
 import java.util.List;
 
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
 import com.baodao212.identity_service.constant.PredefinedRole;
 import com.baodao212.identity_service.dto.request.UserCreationRequest;
 import com.baodao212.identity_service.dto.request.UserUpdateRequest;
@@ -14,11 +19,6 @@ import com.baodao212.identity_service.exception.ErrorCode;
 import com.baodao212.identity_service.mapper.UserMapper;
 import com.baodao212.identity_service.respository.RoleRepository;
 import com.baodao212.identity_service.respository.UserRepository;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Service;
-
 
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
@@ -59,8 +59,7 @@ public class UserService {
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    public UserResponse updateUser(String userId, UserUpdateRequest
-            request) {
+    public UserResponse updateUser(String userId, UserUpdateRequest request) {
         User user = userRepository.findById(userId).orElseThrow(() -> new AppException(ErrorCode.USER_NOT_EXISTED));
 
         userMapper.updateUser(user, request);

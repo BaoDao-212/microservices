@@ -2,17 +2,17 @@ package com.baodao212.identity_service.configuration;
 
 import java.util.HashSet;
 
-import com.baodao212.identity_service.constant.PredefinedRole;
-import com.baodao212.identity_service.entity.Role;
-import com.baodao212.identity_service.entity.User;
-import com.baodao212.identity_service.respository.RoleRepository;
-import com.baodao212.identity_service.respository.UserRepository;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import com.baodao212.identity_service.constant.PredefinedRole;
+import com.baodao212.identity_service.entity.Role;
+import com.baodao212.identity_service.entity.User;
+import com.baodao212.identity_service.respository.RoleRepository;
+import com.baodao212.identity_service.respository.UserRepository;
 
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;

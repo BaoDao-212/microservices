@@ -2,9 +2,9 @@ package com.baodao212.identity_service.dto.request;
 
 import java.time.LocalDate;
 
-import com.baodao212.identity_service.validator.DobConstraint;
 import jakarta.validation.constraints.Size;
 
+import com.baodao212.identity_service.validator.DobConstraint;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;

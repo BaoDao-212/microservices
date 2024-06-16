@@ -7,6 +7,12 @@ import java.util.Date;
 import java.util.StringJoiner;
 import java.util.UUID;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
+
 import com.baodao212.identity_service.dto.request.AuthenticationRequest;
 import com.baodao212.identity_service.dto.request.IntrospectRequest;
 import com.baodao212.identity_service.dto.request.LogoutRequest;
@@ -19,13 +25,6 @@ import com.baodao212.identity_service.exception.AppException;
 import com.baodao212.identity_service.exception.ErrorCode;
 import com.baodao212.identity_service.respository.InvalidatedTokenRepository;
 import com.baodao212.identity_service.respository.UserRepository;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Service;
-import org.springframework.util.CollectionUtils;
-
-
 import com.nimbusds.jose.*;
 import com.nimbusds.jose.crypto.MACSigner;
 import com.nimbusds.jose.crypto.MACVerifier;

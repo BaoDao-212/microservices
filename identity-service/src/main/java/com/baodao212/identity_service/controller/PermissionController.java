@@ -1,14 +1,13 @@
 package com.baodao212.identity_service.controller;
 
-
 import java.util.List;
+
+import org.springframework.web.bind.annotation.*;
 
 import com.baodao212.identity_service.dto.request.ApiResponse;
 import com.baodao212.identity_service.dto.request.PermissionRequest;
 import com.baodao212.identity_service.dto.response.PermissionResponse;
 import com.baodao212.identity_service.service.PermissionService;
-import org.springframework.web.bind.annotation.*;
-
 
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;

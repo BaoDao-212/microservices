@@ -2,15 +2,15 @@ package com.baodao212.identity_service.controller;
 
 import java.text.ParseException;
 
-import com.baodao212.identity_service.dto.request.*;
-import com.baodao212.identity_service.dto.response.AuthenticationResponse;
-import com.baodao212.identity_service.dto.response.IntrospectResponse;
-import com.baodao212.identity_service.service.AuthenticationService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.baodao212.identity_service.dto.request.*;
+import com.baodao212.identity_service.dto.response.AuthenticationResponse;
+import com.baodao212.identity_service.dto.response.IntrospectResponse;
+import com.baodao212.identity_service.service.AuthenticationService;
 import com.nimbusds.jose.JOSEException;
 
 import lombok.AccessLevel;
@@ -31,13 +31,15 @@ public class AuthenticationController {
     }
 
     @PostMapping("/introspect")
-    ApiResponse<IntrospectResponse> authenticate(@RequestBody IntrospectRequest request) throws ParseException, JOSEException {
+    ApiResponse<IntrospectResponse> authenticate(@RequestBody IntrospectRequest request)
+            throws ParseException, JOSEException {
         var result = authenticationService.introspect(request);
         return ApiResponse.<IntrospectResponse>builder().result(result).build();
     }
 
     @PostMapping("/refresh")
-    ApiResponse<AuthenticationResponse> authenticate(@RequestBody RefreshRequest request) throws ParseException, JOSEException {
+    ApiResponse<AuthenticationResponse> authenticate(@RequestBody RefreshRequest request)
+            throws ParseException, JOSEException {
         var result = authenticationService.refreshToken(request);
         return ApiResponse.<AuthenticationResponse>builder().result(result).build();
     }
