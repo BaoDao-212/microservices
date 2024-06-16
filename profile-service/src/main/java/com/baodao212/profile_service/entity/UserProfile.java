@@ -10,8 +10,7 @@ import org.springframework.data.neo4j.core.support.UUIDStringGenerator;
 
 import java.time.LocalDate;
 
-@Getter
-@Setter
+@Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -22,7 +21,6 @@ public class UserProfile {
     @GeneratedValue(generatorClass = UUIDStringGenerator.class)
     String id;
 
-    @Property("userId")
     String userId;
     String firstName;
     LocalDate dob;
